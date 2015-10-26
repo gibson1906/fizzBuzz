@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var userInput: UITextField!
     
+    var userGuess = Int?()
+    
     //    for number in 1...100{
     //
     //    let fizz = (number % 3)
@@ -44,6 +46,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func submitButtonPressed(sender: AnyObject) {
+        
+        userGuess = Int(userInput.text!)
+        
+        if userGuess! % 3 == 0 && userGuess! % 5 == 0 {
+            fizzBuzzDisplay.text = "fizzbuzz!"
+        } else if userGuess! % 3 == 0    {
+            fizzBuzzDisplay.text = "fizz"
+        } else if userGuess! % 5 == 0    {
+            fizzBuzzDisplay.text = "buzz"
+        }
+        
+        
     }
 
 }
